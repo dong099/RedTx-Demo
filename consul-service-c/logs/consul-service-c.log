@@ -1,0 +1,148 @@
+[2019-07-12 18:11:12:111] [INFO ] [Thread: localhost-startStop-1] [method:com.redtx.core.ds.h2.H2DbHelper.<init>(H2DbHelper.java:32)]
+Init H2 DATABASE at /home/allan/tmp/sts/.h2db/consul-service-c-8903
+
+[2019-07-12 18:11:24:970] [DEBUG] [Thread: main] [method:com.redtx.core.http.CallChainHystrixConcurrencyStrategy.<init>(CallChainHystrixConcurrencyStrategy.java:50)]
+HystrixEventNotifier:com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@7fd4acee, HystrixMetricsPublisher:io.micrometer.core.instrument.binder.hystrix.MicrometerMetricsPublisher@165b8a71, HystrixPropertiesStrategy:com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@6175619b
+
+[2019-07-12 18:11:54:073] [INFO ] [Thread: main] [method:com.redtx.core.ds.h2.TxLogHelper.init(TxLogHelper.java:27)]
+Table creation finish (H2 DATABASE)
+
+[2019-07-12 18:11:54:662] [INFO ] [Thread: main] [method:com.redtx.core.netty.NettyClientBootstrap.run(NettyClientBootstrap.java:85)]
+=========================================================
+
+[2019-07-12 18:11:54:662] [INFO ] [Thread: main] [method:com.redtx.core.netty.NettyClientBootstrap.run(NettyClientBootstrap.java:86)]
+Netty Client connected to server successfully! RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+
+[2019-07-12 18:11:54:663] [INFO ] [Thread: main] [method:com.redtx.core.netty.NettyClientBootstrap.run(NettyClientBootstrap.java:87)]
+=========================================================
+
+[2019-07-12 18:13:06:963] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.http.CallChainUtil.callGetter(CallChainUtil.java:40)]
+getting groupId:3e2e806d7e3846b7a221707c07d3ede3
+
+[2019-07-12 18:13:07:003] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.aop.TransactionAspect.transactionRunning(TransactionAspect.java:51)]
+now get into AOP transactionRunning [value], [mygod72] 
+
+[2019-07-12 18:13:07:007] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxInfo.getFromCache(RedTxInfo.java:48)]
+get txMethodId RedTxInfo [targetClazz=class com.sc.svcc.service.DemoServiceImpl, businessMethod=public java.lang.String com.sc.svcc.service.DemoServiceImpl.updateDb(java.lang.String), txMethodId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String)]
+
+[2019-07-12 18:13:07:009] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:28)]
+started local RedTxContext!
+
+[2019-07-12 18:13:07:012] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:37)]
+redTxContextManager.hasTxContext(), txHolder <TxHolder [txStatus=null, lock=java.lang.Object@623e71eb, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=null, txLauncher=false, createTime=1562926387011]>
+
+[2019-07-12 18:13:07:013] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:49)]
+ current module's txHolder <TxHolder [txStatus=null, lock=java.lang.Object@623e71eb, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926387011]>
+
+[2019-07-12 18:13:07:279] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.ds.P6spyJdbcEventImplListener.onBeforeAnyExecute(P6spyJdbcEventImplListener.java:40)]
+statement > INSERT INTO demo_user (oid_index, user_id, password, user_name, email, fk_role, user_status, login_failed_cnt, latest_active_time, paswd_reset, last_paswd_changed, version_id, last_upd_by) VALUES (NULL, 'consul-c-mygod72', 'password', 'consul-c-mygod72', NULL, 'Admin', '1', NULL, NULL, false, NULL, NULL, NULL)
+
+[2019-07-12 18:13:07:327] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.ds.utils.SqlUtils.getPrimaryKeyValuesOfInsert(SqlUtils.java:79)]
+Exception occured when statement.getGeneratedKeys(), with exception Generated keys not requested. You need to specify Statement.RETURN_GENERATED_KEYS to Statement.executeUpdate(), Statement.executeLargeUpdate() or Connection.prepareStatement().
+
+[2019-07-12 18:13:07:332] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.ds.RedTxServiceImpl.saveUndoLog(RedTxServiceImpl.java:170)]
+start to save sqltype 1,  undoLog [TxRecord(tableName=demo_user, fields=[], primaryKeys=[TxFieldValue(tableName=demo_user, fieldName=demo_user.oid_index, value=NULL, valueType=class net.sf.jsqlparser.expression.NullValue)])]
+
+[2019-07-12 18:13:07:630] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.ds.RedTxServiceImpl.saveUndoLog(RedTxServiceImpl.java:187)]
+saved undo log UndoLog [id=null, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), rollbackInfo=[10, -125, 1, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 26, 118, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 18, 19, 100, 101, 109, 111, 95, 117, 115, 101, 114, 46, 111, 105, 100, 95, 105, 110, 100, 101, 120, 26, 41, -6, 7, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101, 34, 41, -110, 1, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101], createTime=2019-07-12 18:13:07, sqlType=1, gmtCreate=1562926387335, gmtModified=1562926387335]
+
+[2019-07-12 18:13:07:935] [ERROR] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxExecutor.runBizMethod(RedTxExecutor.java:58)]
+calling biz method failed for current module with exception 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'consul-c-mygod72' for key 'user_id'
+### The error may exist in com/sc/svcc/mapper/master/DemoUserMapper.java (best guess)
+### The error may involve com.sc.svcc.mapper.master.DemoUserMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into demo_user (oid_index, user_id, password,         user_name, email, fk_role,         user_status, login_failed_cnt, latest_active_time,         paswd_reset, last_paswd_changed, version_id,         last_upd_by)      values (?, ?, ?,         ?, ?, ?,         ?, ?, ?,         ?, ?, ?,         ?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'consul-c-mygod72' for key 'user_id'
+; ]; Duplicate entry 'consul-c-mygod72' for key 'user_id'; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'consul-c-mygod72' for key 'user_id'
+
+[2019-07-12 18:13:07:937] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:57)]
+ current module's txHolder after biz method <TxHolder [txStatus=1, lock=java.lang.Object@623e71eb, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926387011]>
+
+[2019-07-12 18:13:07:940] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.netty.NettyClientBootstrap.getChannel(NettyClientBootstrap.java:54)]
+try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+
+[2019-07-12 18:13:07:945] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:61)]
+send netty msg <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+
+[2019-07-12 18:13:07:946] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxContext.remove(RedTxContext.java:38)]
+Last clean on current module local context - RedTxContext(groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), resource=closed-conn-350757899)
+
+[2019-07-12 18:13:07:973] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.netty.NettyClientHandler.channelRead0(NettyClientHandler.java:61)]
+received txMsg from netty server <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>: 
+
+[2019-07-12 18:13:08:042] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.http.CallChainUtil.callGetter(CallChainUtil.java:40)]
+getting groupId:3e2e806d7e3846b7a221707c07d3ede3
+
+[2019-07-12 18:13:08:218] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:229)]
+start to handle UNDO <[UndoLog [id=null, groupId=GROUP_ID, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), rollbackInfo=[10, -125, 1, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 26, 118, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 18, 19, 100, 101, 109, 111, 95, 117, 115, 101, 114, 46, 111, 105, 100, 95, 105, 110, 100, 101, 120, 26, 41, -6, 7, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101, 34, 41, -110, 1, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101], createTime=2019-07-12 18:13:07, sqlType=1, gmtCreate=1562926388217, gmtModified=1562926388217]]>: 
+
+[2019-07-12 18:13:08:263] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:255)]
+will apply the UNDO sqls <[SqlInfo(sql=DELETE  FROM demo_user WHERE demo_user.oid_index=?, params=[NULL])]>: 
+
+[2019-07-12 18:13:08:340] [ERROR] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:265)]
+Rollback(undo) failed for group 3e2e806d7e3846b7a221707c07d3ede3 unit String com.sc.svcc.service.DemoServiceImpl.updateDb(String) with exception: Invalid argument value: java.io.NotSerializableException Query: DELETE  FROM demo_user WHERE demo_user.oid_index=? Parameters: [NULL]
+
+[2019-07-12 18:13:08:345] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.netty.NettyClientHandler.channelRead0(NettyClientHandler.java:61)]
+received txMsg from netty server <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>: 
+
+[2019-07-12 18:13:08:355] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:229)]
+start to handle UNDO <[UndoLog [id=null, groupId=GROUP_ID, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), rollbackInfo=[10, -125, 1, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 26, 118, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 18, 19, 100, 101, 109, 111, 95, 117, 115, 101, 114, 46, 111, 105, 100, 95, 105, 110, 100, 101, 120, 26, 41, -6, 7, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101, 34, 41, -110, 1, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101], createTime=2019-07-12 18:13:07, sqlType=1, gmtCreate=1562926388354, gmtModified=1562926388354]]>: 
+
+[2019-07-12 18:13:08:356] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:255)]
+will apply the UNDO sqls <[SqlInfo(sql=DELETE  FROM demo_user WHERE demo_user.oid_index=?, params=[NULL])]>: 
+
+[2019-07-12 18:13:08:450] [ERROR] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.undo(RedTxServiceImpl.java:265)]
+Rollback(undo) failed for group 3e2e806d7e3846b7a221707c07d3ede3 unit String com.sc.svcc.service.DemoServiceImpl.updateDb(String) with exception: Invalid argument value: java.io.NotSerializableException Query: DELETE  FROM demo_user WHERE demo_user.oid_index=? Parameters: [NULL]
+
+[2019-07-12 18:15:21:044] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.http.CallChainUtil.callGetter(CallChainUtil.java:40)]
+getting groupId:286c237bb4564deea75fca9713b1865f
+
+[2019-07-12 18:15:21:046] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.aop.TransactionAspect.transactionRunning(TransactionAspect.java:51)]
+now get into AOP transactionRunning [value], [mygod73] 
+
+[2019-07-12 18:15:21:048] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxInfo.getFromCache(RedTxInfo.java:48)]
+get txMethodId RedTxInfo [targetClazz=class com.sc.svcc.service.DemoServiceImpl, businessMethod=public java.lang.String com.sc.svcc.service.DemoServiceImpl.updateDb(java.lang.String), txMethodId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String)]
+
+[2019-07-12 18:15:21:049] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:28)]
+started local RedTxContext!
+
+[2019-07-12 18:15:21:051] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:37)]
+redTxContextManager.hasTxContext(), txHolder <TxHolder [txStatus=null, lock=java.lang.Object@77d818d3, groupId=286c237bb4564deea75fca9713b1865f, unitId=null, txLauncher=false, createTime=1562926521051]>
+
+[2019-07-12 18:15:21:052] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:49)]
+ current module's txHolder <TxHolder [txStatus=null, lock=java.lang.Object@77d818d3, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926521051]>
+
+[2019-07-12 18:15:21:057] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.ds.P6spyJdbcEventImplListener.onBeforeAnyExecute(P6spyJdbcEventImplListener.java:40)]
+statement > INSERT INTO demo_user (oid_index, user_id, password, user_name, email, fk_role, user_status, login_failed_cnt, latest_active_time, paswd_reset, last_paswd_changed, version_id, last_upd_by) VALUES (NULL, 'consul-c-mygod73', 'password', 'consul-c-mygod73', NULL, 'Admin', '1', NULL, NULL, false, NULL, NULL, NULL)
+
+[2019-07-12 18:15:21:067] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.ds.utils.SqlUtils.getPrimaryKeyValuesOfInsert(SqlUtils.java:79)]
+Exception occured when statement.getGeneratedKeys(), with exception Generated keys not requested. You need to specify Statement.RETURN_GENERATED_KEYS to Statement.executeUpdate(), Statement.executeLargeUpdate() or Connection.prepareStatement().
+
+[2019-07-12 18:15:21:070] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.ds.RedTxServiceImpl.saveUndoLog(RedTxServiceImpl.java:170)]
+start to save sqltype 1,  undoLog [TxRecord(tableName=demo_user, fields=[], primaryKeys=[TxFieldValue(tableName=demo_user, fieldName=demo_user.oid_index, value=NULL, valueType=class net.sf.jsqlparser.expression.NullValue)])]
+
+[2019-07-12 18:15:21:079] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.ds.RedTxServiceImpl.saveUndoLog(RedTxServiceImpl.java:187)]
+saved undo log UndoLog [id=null, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), rollbackInfo=[10, -125, 1, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 26, 118, 10, 9, 100, 101, 109, 111, 95, 117, 115, 101, 114, 18, 19, 100, 101, 109, 111, 95, 117, 115, 101, 114, 46, 111, 105, 100, 95, 105, 110, 100, 101, 120, 26, 41, -6, 7, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101, 34, 41, -110, 1, 38, 110, 101, 116, 46, 115, 102, 46, 106, 115, 113, 108, 112, 97, 114, 115, 101, 114, 46, 101, 120, 112, 114, 101, 115, 115, 105, 111, 110, 46, 78, 117, 108, 108, 86, 97, 108, 117, 101], createTime=2019-07-12 18:15:21, sqlType=1, gmtCreate=1562926521071, gmtModified=1562926521071]
+
+[2019-07-12 18:15:21:081] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:57)]
+ current module's txHolder after biz method <TxHolder [txStatus=0, lock=java.lang.Object@77d818d3, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926521051]>
+
+[2019-07-12 18:15:21:083] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.netty.NettyClientBootstrap.getChannel(NettyClientBootstrap.java:54)]
+try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+
+[2019-07-12 18:15:21:088] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:61)]
+send netty msg <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+
+[2019-07-12 18:15:21:089] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxContext.remove(RedTxContext.java:38)]
+Last clean on current module local context - RedTxContext(groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), resource=closed-conn-1145017718)
+
+[2019-07-12 18:15:21:172] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.netty.NettyClientHandler.channelRead0(NettyClientHandler.java:61)]
+received txMsg from netty server <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>: 
+
+[2019-07-12 18:15:21:178] [DEBUG] [Thread: nioEventLoopGroup-3-1] [method:com.redtx.core.ds.RedTxServiceImpl.cleanUndo(RedTxServiceImpl.java:195)]
+cleaned undo log DELETE FROM TXC_UNDO_LOG WHERE GROUP_ID=286c237bb4564deea75fca9713b1865f AND UNIT_ID=String com.sc.svcc.service.DemoServiceImpl.updateDb(String). 
+
+[2019-07-12 18:19:52:940] [INFO ] [Thread: Thread-13] [method:com.redtx.core.ds.h2.H2DbHelper.destroy(H2DbHelper.java:70)]
+log hikariDataSource close.
+

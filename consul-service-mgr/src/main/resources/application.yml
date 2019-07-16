@@ -1,0 +1,21 @@
+server:
+  port: 9010
+  
+msg: redtx
+
+spring:
+  redis:
+    host: ${REDIS_SERVER:10.2.3.19}
+    port: 6379
+    database: 0
+  data:
+    redis:
+      repositories:
+        enabled: false
+            
+redtx:
+  mgr:
+    host: ${REDTX_SERVER_NAME:10.2.1.63}
+    port: ${REDTX_SERVER_PORT:9011}
+    txTimeout: 6000
+    

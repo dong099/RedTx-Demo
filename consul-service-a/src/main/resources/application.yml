@@ -1,0 +1,42 @@
+server:
+  port: 8901
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 #默认：（方法上记得要加上@HystrixCommand，否则无效）
+#          strategy: SEMAPHORE
+#Hystrix官方强烈建议使用THREAD作为隔离策略
+#https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.thread.timeoutInMilliseconds
+
+#org.springframework.cloud.openfeign.FeignClientsConfiguration
+feign:
+  hystrix:
+    enabled: true 
+
+spring:
+  redis:
+    host: ${REDIS_SERVER:10.2.3.19}
+    port: 6379
+    database: 0
+   
+#HystrixDashboard, spring-boot-starter-actuator 
+management:
+  endpoints:
+    web:
+      exposure:
+        #include: hystrix.stream, info, health
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+      #base-path: actuator //by default
+
+
+redtx:
+  client:
+    txTimeout: 30000
+    mgrAddrs: ${REDTX_SERVER:10.2.1.63:9011}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="true"
+	xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<!-- <param name="Target" value="System.out"/> -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MM-dd HH:mm:ss a} [Thread: %t][ Method: %l ]%n%p:%m%n" />
+		</layout>
+	</appender>
+ 
+    <!-- FileAppender子类 -->
+    <appender name="log4jDebug" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="./logs/consul_service_a.log" />
+        <param name="Append" value="true" />
+        <param name="MaxBackupIndex" value="10" />
+        <param name="MaxFileSize" value="5MB" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-5p] [Thread: %t] [method:%l]%n%m%n%n" />
+        </layout>
+    </appender> 
+    
+    
+    <logger name="org.springframework.cloud.netflix">
+		<level value="ERROR" />
+	</logger>
+     <logger name="com.netflix">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.sc">
+		<level value="DEBUG" />
+		<appender-ref ref="log4jDebug" />
+	</logger>
+	
+	<logger name="com.redtx">
+		<level value="DEBUG" />
+		<appender-ref ref="log4jDebug" />
+	</logger>
+	
+	<root>
+		<priority value="info" />
+		<appender-ref ref="CONSOLE" />
+		
+
+	</root>
+</log4j:configuration>
