@@ -19,9 +19,9 @@ spring:
   datasource:
     master-db:
       name: masterDb
-      url: jdbc:mysql://10.2.28.8:3306/db_c?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      url: jdbc:mysql://172.10.28.8:3306/db_c?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: mavenir
+      password: password
       #type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver    
       #最大活跃数

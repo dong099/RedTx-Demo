@@ -14,95 +14,95 @@ Started RedTxServer in 10.16 seconds (JVM running for 11.12)
 =========================================================
 
 2019-07-12 18:22:49,342 [main] INFO  com.redtx.mgr.netty.NettyServerBootstrap [NettyServerBootstrap.java : 59] - 
-RedTx Server runs on hotst/port: 10.2.1.63:9011 
+RedTx Server runs on hotst/port: 172.10.1.63:9011 
 
 2019-07-12 18:22:49,342 [main] INFO  com.redtx.mgr.netty.NettyServerBootstrap [NettyServerBootstrap.java : 63] - 
 =========================================================
 
 2019-07-12 18:23:39,073 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 46] - 
-[/10.2.1.63:64483] is online[channelActive]
+[/172.10.1.63:64483] is online[channelActive]
 
 2019-07-12 18:24:30,238 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 46] - 
-[/10.2.135.104:50722] is online[channelActive]
+[/172.10.135.104:50722] is online[channelActive]
 
 2019-07-12 18:24:33,908 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 46] - 
-[/10.2.135.104:50728] is online[channelActive]
+[/172.10.135.104:50728] is online[channelActive]
 
 2019-07-12 18:25:41,895 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.1.63:64483, detail: <TxMsg(txStatus=0, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+handle the TxMsg from client - /172.10.1.63:64483, detail: <TxMsg(txStatus=0, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
 
 2019-07-12 18:25:43,546 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50722, detail: <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50722, detail: <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
 
 2019-07-12 18:25:43,559 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.1.63:64483, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.1.63:64483, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:25:43,560 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50722, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50722, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:25:43,777 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50728, detail: <TxMsg(txStatus=null, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50728, detail: <TxMsg(txStatus=null, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
 
 2019-07-12 18:25:43,781 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 130] - 
-sent the tx query msg back - client /10.2.135.104:50728, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
+sent the tx query msg back - client /172.10.135.104:50728, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
 
 2019-07-12 18:25:43,829 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50728, detail: <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50728, detail: <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
 
 2019-07-12 18:25:43,841 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.1.63:64483, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.1.63:64483, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:25:43,842 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50728, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50728, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
 
 2019-07-12 18:25:43,843 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50722, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50722, msg TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:27:56,599 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.1.63:64483, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+handle the TxMsg from client - /172.10.1.63:64483, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
 
 2019-07-12 18:27:56,692 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50722, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50722, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
 
 2019-07-12 18:27:56,722 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50728, detail: <TxMsg(txStatus=null, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50728, detail: <TxMsg(txStatus=null, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
 
 2019-07-12 18:27:56,724 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 130] - 
-sent the tx query msg back - client /10.2.135.104:50728, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
+sent the tx query msg back - client /172.10.135.104:50728, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
 
 2019-07-12 18:27:56,759 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50728, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50728, detail: <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
 
 2019-07-12 18:27:56,768 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.1.63:64483, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.1.63:64483, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:27:56,769 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50728, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50728, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
 
 2019-07-12 18:27:56,770 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50722, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50722, msg TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:31:55,767 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.1.63:64483, detail: <TxMsg(txStatus=0, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
+handle the TxMsg from client - /172.10.1.63:64483, detail: <TxMsg(txStatus=0, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
 
 2019-07-12 18:31:55,799 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 67] - 
-handle the TxMsg from client - /10.2.135.104:50728, detail: <TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
+handle the TxMsg from client - /172.10.135.104:50728, detail: <TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)>
 
 2019-07-12 18:31:55,811 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.1.63:64483, msg TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
+sent the clientMsg back - client /172.10.1.63:64483, msg TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svcb.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)
 
 2019-07-12 18:31:55,812 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.redis.RedisTxMgr [RedisTxMgr.java : 102] - 
-sent the clientMsg back - client /10.2.135.104:50728, msg TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
+sent the clientMsg back - client /172.10.135.104:50728, msg TxMsg(txStatus=1, groupId=612163c976f24053a9ae373fe10de746, unitId=String com.sc.svca.service.DemoServiceImpl.execRedTx(String,String), txLauncher=true, msgStr=null)
 
 2019-07-12 18:32:30,609 [nioEventLoopGroup-5-2] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 56] - 
-[/10.2.135.104:50722] is offline[channelInactive]
+[/172.10.135.104:50722] is offline[channelInactive]
 
 2019-07-12 18:32:31,784 [nioEventLoopGroup-5-3] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 56] - 
-[/10.2.135.104:50728] is offline[channelInactive]
+[/172.10.135.104:50728] is offline[channelInactive]
 
 2019-07-12 18:32:39,983 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 110] - 
 *********server exceptionCaught**********java.io.IOException: An existing connection was forcibly closed by the remote host
 
 2019-07-12 18:32:39,983 [nioEventLoopGroup-5-1] INFO  com.redtx.mgr.netty.NettyServerHandler [NettyServerHandler.java : 56] - 
-[/10.2.1.63:64483] is offline[channelInactive]
+[/172.10.1.63:64483] is offline[channelInactive]
 

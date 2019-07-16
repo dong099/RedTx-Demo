@@ -9,4 +9,4 @@ RUN chmod +x /startup.sh
 ENTRYPOINT [ "/startup.sh" ]
 
 #docker build -t spring-cloud/consul-service-b .
-#docker run -d -p 8902:8902 --name consul-service-b  -e AUTH_SERVER=auth-service -e CONSUL_SERVER=10.2.28.8 spring-cloud/consul-service-b
+#docker run -d -p 8902:8902 --name consul-service-b  -e AUTH_SERVER=auth-service -e CONSUL_SERVER=172.10.28.8 spring-cloud/consul-service-b

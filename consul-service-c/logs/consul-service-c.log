@@ -11,7 +11,7 @@ Table creation finish (H2 DATABASE)
 =========================================================
 
 [2019-07-12 18:11:54:662] [INFO ] [Thread: main] [method:com.redtx.core.netty.NettyClientBootstrap.run(NettyClientBootstrap.java:86)]
-Netty Client connected to server successfully! RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+Netty Client connected to server successfully! RedtxClientConfig [txTimeout=30000, mgrAddrs=172.10.1.63:9011, txSyncCallTimeout=3000]
 
 [2019-07-12 18:11:54:663] [INFO ] [Thread: main] [method:com.redtx.core.netty.NettyClientBootstrap.run(NettyClientBootstrap.java:87)]
 =========================================================
@@ -60,7 +60,7 @@ calling biz method failed for current module with exception
  current module's txHolder after biz method <TxHolder [txStatus=1, lock=java.lang.Object@623e71eb, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926387011]>
 
 [2019-07-12 18:13:07:940] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.netty.NettyClientBootstrap.getChannel(NettyClientBootstrap.java:54)]
-try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=172.10.1.63:9011, txSyncCallTimeout=3000]
 
 [2019-07-12 18:13:07:945] [DEBUG] [Thread: http-nio-8903-exec-9] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:61)]
 send netty msg <TxMsg(txStatus=1, groupId=3e2e806d7e3846b7a221707c07d3ede3, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>
@@ -129,7 +129,7 @@ saved undo log UndoLog [id=null, groupId=286c237bb4564deea75fca9713b1865f, unitI
  current module's txHolder after biz method <TxHolder [txStatus=0, lock=java.lang.Object@77d818d3, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, createTime=1562926521051]>
 
 [2019-07-12 18:15:21:083] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.netty.NettyClientBootstrap.getChannel(NettyClientBootstrap.java:54)]
-try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=10.2.1.63:9011, txSyncCallTimeout=3000]
+try to get netty connection to server with config RedtxClientConfig [txTimeout=30000, mgrAddrs=172.10.1.63:9011, txSyncCallTimeout=3000]
 
 [2019-07-12 18:15:21:088] [DEBUG] [Thread: http-nio-8903-exec-4] [method:com.redtx.core.tx.RedTxService.execTx(RedTxService.java:61)]
 send netty msg <TxMsg(txStatus=0, groupId=286c237bb4564deea75fca9713b1865f, unitId=String com.sc.svcc.service.DemoServiceImpl.updateDb(String), txLauncher=false, msgStr=null)>

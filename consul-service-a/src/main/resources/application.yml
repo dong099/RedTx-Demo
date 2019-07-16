@@ -19,7 +19,7 @@ feign:
 
 spring:
   redis:
-    host: ${REDIS_SERVER:10.2.3.19}
+    host: ${REDIS_SERVER:172.10.3.19}
     port: 6379
     database: 0
    
@@ -39,4 +39,4 @@ management:
 redtx:
   client:
     txTimeout: 30000
-    mgrAddrs: ${REDTX_SERVER:10.2.1.63:9011}
+    mgrAddrs: ${REDTX_SERVER:172.10.1.63:9011}

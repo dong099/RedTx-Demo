@@ -14,7 +14,7 @@ spring:
         health-check-path: /actuator/health                                                      #健康检查
         health-check-interval: 20s
         prefer-ip-address: true
-        #ip-address: 10.2.1.63
+        #ip-address: 172.10.1.63
         #register-health-check: true
         #health-check-critical-timeout: 2m
         # 服务停止时取消注册

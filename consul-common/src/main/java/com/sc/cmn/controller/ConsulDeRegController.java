@@ -45,7 +45,7 @@ public class ConsulDeRegController {
                     }
                 }
                 
-                //curl -X DELETE http://10.2.1.63:8201/api/deregister
+                //curl -X DELETE http://172.10.1.63:8201/api/deregister
                 break;
             } catch (Exception e) {
             	e.printStackTrace();
