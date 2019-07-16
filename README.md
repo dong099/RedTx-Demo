@@ -41,6 +41,13 @@ public class RedTxServer {
 ```
 
 3. check the sample configuration - application.yml (redis and host/port setup)
+```
+redtx:
+  mgr:
+    host: ${REDTX_SERVER_NAME:172.10.1.63}
+    port: ${REDTX_SERVER_PORT:9011}
+    txTimeout: 6000
+```
 
 4. start this app, it should show:
 ```
@@ -98,8 +105,15 @@ public class DemoServiceImpl implements DemoService {
 	}
 }
 ```
+3. check the configuration pointing to RedTx Server
+```
+redtx:
+  client:
+    tx-timeout: 30000
+    mgrAddrs: ${REDTX_SERVER:172.10.1.63:9011}
+```	
 
-3. start this client app, it will show:
+4. start this client app, it will show:
 ```
 =========================================================
 Netty Client connected to server successfully! RedtxClientConfig [txTimeout=6000, mgrAddrs=172.10.1.63:9011, txSyncCallTimeout=3000]
