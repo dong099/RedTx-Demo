@@ -18,11 +18,16 @@
 	</parent>
 
 	<modules>
-		<module>consul-common</module>
+		<module>consul-gateway</module>
+		<module>consul-auth-service</module>
 		<module>consul-service-a</module>
 		<module>consul-service-b</module>
+		<module>consul-common</module>
 		<module>consul-service-c</module>
 		<module>consul-service-mgr</module>
+		<module>dubbo-service-a</module>
+		<module>dubbo-service-b</module>
+		<module>dubbo-service-c</module>
 	</modules>
 
 	<properties>
@@ -32,8 +37,61 @@
 		<docker.image.prefix>spring-cloud</docker.image.prefix>
 		<spring.cloud.version>Finchley.SR1</spring.cloud.version>
 		<spring-boot-admin.version>2.0.4</spring-boot-admin.version>
-		<!--spring-boot.version>2.0.4.RELEASE</spring-boot.version -->
+		<spring-boot.version>2.0.4.RELEASE</spring-boot.version>
+		<dubbo.version>2.7.1</dubbo.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- Apache Dubbo -->
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-dependencies-bom</artifactId>
+				<version>${dubbo.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${dubbo.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.servlet</groupId>
+						<artifactId>servlet-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -52,25 +110,8 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-
-
-
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring.cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<pluginManagement>

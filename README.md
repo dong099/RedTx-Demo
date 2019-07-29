@@ -7,7 +7,7 @@
 4. consul-service-c   :  c moudle called by module a, to update its own db tables
 5. consul-service-mgr :  distributed transaction backend management server.
 
-
+6. dubbo-service-* :  dubbo related testing demo.
 # stacks points
 * Spring boot 2.0.4
 * Spring cloud Finchley
@@ -15,6 +15,7 @@
 * Hystrix & Dashboard
 * Spring Cloud Sleuth/zipkin  
 * Ribbon 
+* Dubbo 2.7.1
 * Feign
 * Netty
 * mybatis/mysql

@@ -1,0 +1,2 @@
+defaultRRLB=org.apache.dubbo.rpc.cluster.loadbalance.RoundRobinLoadBalance
+#http://dubbo.apache.org/en-us/docs/dev/impls/load-balance.html

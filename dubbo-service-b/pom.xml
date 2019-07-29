@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sc</groupId>
+		<artifactId>RedTx</artifactId>
+		<version>1.0</version>
+	</parent>
+
+
+
+	<artifactId>dubbo-service-b</artifactId>
+	<version>1.0</version>
+	<name>dubbo-service-b</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<source.level>1.8</source.level>
+		<target.level>1.8</target.level>
+
+	</properties>
+
+	<!--samples refer to: https://github.com/apache/dubbo-spring-boot-project -->
+	<dependencies>
+
+		<!-- Spring Boot dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- 加入common依赖 -->
+		<dependency>
+			<groupId>com.sc</groupId>
+			<artifactId>consul-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.sc</groupId>
+			<artifactId>redtx-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Dubbo Spring Boot Starter -->
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo-spring-boot-starter</artifactId>
+			<version>${dubbo.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo-dependencies-zookeeper</artifactId>
+			<version>${dubbo.version}</version>
+			<type>pom</type>
+		</dependency>
+
+		<!-- alibaba的druid数据库连接池 对于使用mysql jdbc 6.0的 必须更新druid到最新的1.1.6， 否则druid无法支持分布式事务 
+			<artifactId>druid</artifactId> <version>1.0.29</version> -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+		<!-- mybatis common packages 版本匹配 http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/ -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- <plugin> <groupId>com.spotify</groupId> <artifactId>docker-maven-plugin</artifactId> 
+				</plugin> -->
+		</plugins>
+	</build>
+</project>
